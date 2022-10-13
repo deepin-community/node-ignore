@@ -1,0 +1,3 @@
+  * Check more of testsuite when more recent ESLint is in Debian.
+  * Check more of testsuite when needed node modules are in Debian:
+    spawn-sync pre-suf

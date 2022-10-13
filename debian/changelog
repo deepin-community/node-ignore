@@ -1,0 +1,79 @@
+node-ignore (5.1.9-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+  [ Jonas Smedegaard ]
+  * build-depend on recent babeljs (not babel7)
+  * fix build-depend on nodejs:any
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 09 Nov 2021 13:26:29 +0100
+
+node-ignore (5.1.8-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release(s)
+
+  [ Jonas Smedegaard ]
+  * simplify source helper script copyright-check
+  * use debhelper compatibility level 13 (not 12)
+  * declare compliance with Debian Policy 4.6.0
+  * update copyright info:
+    + use Reference field (not License-Reference);
+      tighten lintian overrides
+    + update coverage
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 09 Oct 2021 15:15:52 +0200
+
+node-ignore (5.1.4-6) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Apply multi-arch hints.
+    + node-ignore: Add Multi-Arch: foreign.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Sat, 28 Aug 2021 22:59:24 +0100
+
+node-ignore (5.1.4-5) unstable; urgency=medium
+
+  * use babel7 presets;
+    build-depend on node-babel7
+    (not node-babel-cli node-babel-preset-env);
+    closes: bug#960017, thanks to Pirate Praveen
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 09 May 2020 08:41:29 +0200
+
+node-ignore (5.1.4-4) unstable; urgency=medium
+
+  * watch: drop unused repacksuffix
+  * use debhelper compatibility level 12 (not 9);
+    build-depend on debhelper-compat (not debhelper)
+  * declare compliance with Debian Policy 4.5.0
+  * fix: stop bogusly build-depend on perl
+  * copyright: update coverage
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 21 Apr 2020 20:09:49 +0200
+
+node-ignore (5.1.4-3) unstable; urgency=medium
+
+  * fix clean generated docs
+  * update TODOs
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 30 Nov 2019 11:12:57 +0100
+
+node-ignore (5.1.4-2) unstable; urgency=medium
+
+  * Fix stop bogusly build-depend on help2man.
+  * Fix install path.
+  * Add (superficial) autopkgtest.
+  * Fix typo in TODO file.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 17 Oct 2019 21:28:04 +0200
+
+node-ignore (5.1.4-1) unstable; urgency=low
+
+  * Initial release.
+    Closes: Bug#942452.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 16 Oct 2019 18:34:40 +0200

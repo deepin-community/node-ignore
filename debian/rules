@@ -1,0 +1,36 @@
+#!/usr/bin/make -f
+
+# generate documentation unless nodoc requested
+ifeq (,$(filter nodoc,$(DEB_BUILD_OPTIONS)))
+DOCS = README.html README.txt
+CHANGELOGS = CHANGELOG.html CHANGELOG.txt
+endif
+
+override_dh_auto_build: $(DOCS) $(CHANGELOGS)
+	babeljs --no-babelrc --presets @babel/preset-env --out-file legacy.js index.js
+
+override_dh_auto_test:
+#	eslint .
+	tsc ./test/ts/simple.ts --lib ES6
+	node ./test/ts/simple.js
+#	tap test/git-check-ignore.js
+	tap test/ignore.js
+	tap test/others.js
+
+override_dh_installdocs:
+	dh_installdocs --all -- $(DOCS)
+
+override_dh_installchangelogs:
+	dh_installchangelogs -- $(CHANGELOGS)
+
+override_dh_clean:
+	dh_clean -- $(DOCS) $(CHANGELOGS)
+
+%.html: %.md
+	pandoc --from gfm-raw_html --to html --standalone --output $@ $<
+
+%.txt: %.md
+	pandoc --from gfm-raw_html --to plain --output $@ $<
+
+%:
+	dh $@

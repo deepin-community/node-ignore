@@ -1,0 +1,46 @@
+Source: node-ignore
+Section: javascript
+Priority: optional
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders:
+ Jonas Smedegaard <dr@jones.dk>,
+Build-Depends:
+ babeljs (>= 7),
+ debhelper-compat (= 13),
+ node-debug <!nocheck>,
+ node-typescript <!nocheck>,
+ node-tap <!nocheck>,
+ nodejs:any <!nocheck>,
+ pandoc <!nodoc>,
+Standards-Version: 4.6.0
+Homepage: https://github.com/kaelzhang/node-ignore
+Vcs-Browser: https://salsa.debian.org/js-team/node-ignore
+Vcs-Git: https://salsa.debian.org/js-team/node-ignore.git
+Rules-Requires-Root: no
+
+Package: node-ignore
+Architecture: all
+Depends:
+ nodejs,
+ ${misc:Depends},
+Multi-Arch: foreign
+Description: manager and filter for .gitignore rules - Node.js library
+ "ignore" is a manager, filter and parser
+ for the .gitignore spec at <https://git-scm.com/docs/gitignore>,
+ implemented in pure JavaScript.
+ .
+  * Standalone module, much simpler than e.g. "fstream-ignore".
+  * Only contains utility methods
+    to filter paths according to the specified ignore rules.
+  * Never tries to discover ignore rules
+    by traversing directories or fetching from git configurations.
+  * Doesn't care about sub-modules of git projects.
+  * Complies exactly to gitignore documentation
+    at <https://git-scm.com/docs/gitignore>:
+    - "/*.js" should only match "a.js", not also "abc/a.js".
+    - "**/foo" should match "foo" anywhere.
+    - Prevents re-including a file excluded in a parent directory.
+    - Handles trailing whitespaces:
+      - "a " (one space) should not match "a  " (two spaces).
+      - "a \ " matches "a  ".
+    - All test cases are verified against "git check-ignore".
