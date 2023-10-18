@@ -14,8 +14,8 @@ override_dh_auto_test:
 	tsc ./test/ts/simple.ts --lib ES6
 	node ./test/ts/simple.js
 #	tap test/git-check-ignore.js
-	tap test/ignore.js
-	tap test/others.js
+	tap --no-cov test/ignore.js
+	tap --no-cov test/others.js
 
 override_dh_installdocs:
 	dh_installdocs --all -- $(DOCS)

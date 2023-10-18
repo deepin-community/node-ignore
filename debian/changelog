@@ -1,3 +1,36 @@
+node-ignore (5.2.1-1) unstable; urgency=medium
+
+  * Team upload
+  * Update standards version to 4.6.1, no changes needed.
+  * New upstream version 5.2.1
+
+ -- Yadd <yadd@debian.org>  Sat, 03 Dec 2022 18:48:27 +0100
+
+node-ignore (5.2.0-3) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Apply multi-arch hints. + node-ignore: Add :any qualifier for nodejs
+    dependency.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Mon, 21 Nov 2022 10:09:11 +0000
+
+node-ignore (5.2.0-2) unstable; urgency=medium
+
+  * Team upload
+  * Fix test for tap >= 15 (--no-cov) (Closes: #1008513)
+
+ -- Yadd <yadd@debian.org>  Mon, 28 Mar 2022 08:42:28 +0200
+
+node-ignore (5.2.0-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+  [ Jonas Smedegaard ]
+  * tighten lintian overrides
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 21 Dec 2021 14:02:16 +0100
+
 node-ignore (5.1.9-1) unstable; urgency=medium
 
   [ upstream ]
